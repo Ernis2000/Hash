@@ -22,3 +22,17 @@ big1diffsymbol2.txt- 6fb0e92ebe4c8e61bd5003bcc7c620d0bbdbd81e9a32784cc728c150eb5
 onesymbol1.txt - 9d0813f484223ce761c069ff81101b1cf19fe5ecec9fe2d1c49fdf1b9c9fdc00
 onesymbol2.txt - 450d84162741005e5309ffcf21d45d049ff48fa69ff3365b9ff1d6d5741009fe
 ```
+
+# Skirtingų string'ų ir panašių string'ų testų rezultatai
+
+- 100000 skirtingų string'ų po 6 simbolius:
+```
+Collisions: 0
+```
+- 100000 panašių string'ų po 10 simbolių:
+```
+Mažiausias skirtingumas: 15,0391
+Didžiausias skirtingumas: 42,5781
+Average skirtingumas: 32,3203
+```
+
