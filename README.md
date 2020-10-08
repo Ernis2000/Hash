@@ -31,6 +31,7 @@ Collisions: 0
 ```
 - 100000 panašių string'ų po 10 simbolių:
 ```
+Collisions: 0
 Mažiausias skirtingumas: 15,0391
 Didžiausias skirtingumas: 42,5781
 Average skirtingumas: 32,3203
