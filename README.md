@@ -34,6 +34,6 @@ Collisions: 0
 Collisions: 0
 Mažiausias skirtingumas: 15,0391
 Didžiausias skirtingumas: 42,5781
-Average skirtingumas: 32,3203
+Vidutinis skirtingumas: 32,3203
 ```
 
