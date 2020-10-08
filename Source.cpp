@@ -1,9 +1,9 @@
 #include "Header.h"
 
-std::string hashfunction(std::string word = "")
+std::string hashfunction(std::string word)
 {
 	
-	unsigned int sum = 0;
+	unsigned int sum = 2;
 	if (word == "")
 	{
 		word += std::to_string(sum);
@@ -14,6 +14,8 @@ std::string hashfunction(std::string word = "")
 		sum += value * value;
 		sum += (~value % ~sum);
 		sum += sum << 1;
+		
+		
 	}
 	sum = sum >> 1;
 	std::stringstream ss;
@@ -24,6 +26,7 @@ std::string hashfunction(std::string word = "")
 		for (unsigned int tempresult : result)
 		{
 			tempresult = (tempresult + ~result.length()) * sum >> 2;
+			tempresult += sum | tempresult;
 			tempresult += tempresult >> 2;
 			ss.str("");
 			ss << std::hex << tempresult;
@@ -34,12 +37,12 @@ std::string hashfunction(std::string word = "")
 			result = result.substr(0, 64);
 		}
 	}
-	std::cout << result << std::endl;
+	//std::cout << result << std::endl;
 	
 	return result;
 }
 
-void reading(std::string& word)
+void reading()
 {
 	std::string filename;
 	std::cout << "Enter the full file name:" << std::endl;
@@ -52,10 +55,11 @@ void reading(std::string& word)
 		exit(0);
 	}
 	else {
-		while (std::getline(file, word)) {
-		hashfunction(word);
-		}
+		
+		std::string word((std::istreambuf_iterator<char>(file)),
+			(std::istreambuf_iterator<char>()));
 
+		hashfunction(word);
 		
 	}
 	//auto end = std::chrono::high_resolution_clock::now();
@@ -171,7 +175,7 @@ std::cout << "Use a hand written text or read from a file?" << std::endl;
 		hashfunction(word);
 	}
 	else {
-		reading(word);
+		reading();
 		
 	}
 	}

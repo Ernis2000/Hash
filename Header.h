@@ -10,8 +10,8 @@
 #include <chrono>
 #include <vector>
 
-#define RANDOM_LENGTH 5
-#define RANDOM_COUNT 10000
-#define SIMILAR_LENGHT 5
-#define SIMILAR_COUNT 10000
+#define RANDOM_LENGTH 6
+#define RANDOM_COUNT 100000
+#define SIMILAR_LENGHT 100
+#define SIMILAR_COUNT 100000
  
