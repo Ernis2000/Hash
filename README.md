@@ -2,6 +2,10 @@
 
 # Hash generatoriaus kūrimas
 
+# Hash funkcijos veikimas
+
+Vyksta ciklas kuris nuskaito string'o simbolį ir paverčia į skaičių(value) pagal ASCII, tuomet tas skaičius padauginamas iš savęs, naujas skaičius pridedamas į sumą(sum). Toliau invertuotas value padalinamas iš invertuoto sum, gautas skaičius pridedamas prie sum, paskui sum skaičiaus bitai yra paslenkami į kairę viena pozicija ir gautas skaičius  vėl pridedamas prie sum. Šis ciklas pakartojamas kiekvienam string'o simboliui. Po šio ciklo gauto sum skaičiaus bitai yra paslenkami viena pozocija į dešinę, sukuriamas naujas stringstream 
+
 # Testavimų rezultatai
 
 - Konstitucijos kiekvienos eilutės hash'avimo laikas: 0,439703 sec
