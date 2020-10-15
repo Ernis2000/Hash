@@ -3,7 +3,7 @@
 std::string hashfunction(std::string word)
 {
 	
-	unsigned int sum = 2;
+	unsigned int sum = 0;
 	if (word == "")
 	{
 		word += std::to_string(sum);
@@ -11,13 +11,14 @@ std::string hashfunction(std::string word)
 	for (int i : word)
 	{
 		unsigned int value = i;
-		sum += value * value;
-		sum += (~value % ~sum);
-		sum += sum << 1;
-		
+		sum += (value * value);
+		sum += (value % sum) * value;
+		sum += sum * sum;
+		sum += sum << 3;
+		sum += sum * value;
 		
 	}
-	sum = sum >> 1;
+	sum = sum >> 2;
 	std::stringstream ss;
 	ss << std::hex << sum;
 	std::string result = (ss.str());
@@ -25,8 +26,7 @@ std::string hashfunction(std::string word)
 	{
 		for (unsigned int tempresult : result)
 		{
-			tempresult = (tempresult + ~result.length()) * sum >> 2;
-			tempresult += sum | tempresult;
+			tempresult = tempresult * (sum >> 2);
 			tempresult += tempresult >> 2;
 			ss.str("");
 			ss << std::hex << tempresult;
@@ -37,7 +37,7 @@ std::string hashfunction(std::string word)
 			result = result.substr(0, 64);
 		}
 	}
-	//std::cout << result << std::endl;
+	std::cout << result << std::endl;
 	
 	return result;
 }
@@ -69,14 +69,14 @@ void reading()
 }
 
 std::string randomword(const int length) {
-	static const char alphanum[] =
+	static const char alphanumber[] =
 		"0123456789"
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 		"abcdefghijklmnopqrstuvwxyz";
 	std::string result("", length);
 
 	for (int i = 0; i < length; ++i) {
-		result[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
+		result[i] = alphanumber[rand() % (sizeof(alphanumber) - 1)];
 	}
 	return result;
 }
@@ -183,12 +183,5 @@ std::cout << "Use a hand written text or read from a file?" << std::endl;
 		similiartest();
 		//randomwordtests();
 	}
-	
-	
-	
-	
-
-
-
 	return 0;
 }
