@@ -13,18 +13,18 @@ Vyksta ciklas kuris nuskaito string'o simbolį ir paverčia į skaičių(value) 
 
 - 2 skirtingi 2000 simbolių failai:
 ```
-2000symbols1.txt- 2975c4996721a375144a30196aa46f00233d7bf1bd2d3955144a3015144a3016
-2000symbols2.txt- 34f476d2cbf82593f2a56e623cff43030e29ba17fd9d54f636d780e4bb6bc072
+2000symbols1.txt- 2894592574abeac9f7ad6ef66d2a9efa2894592548b661c9cda8efc674abeac9
+2000symbols2.txt- 422b8708a6af298855d3bcca8253cd66b5d39694df57a08e4bbc7a7c33cd808a
 ```
 - 2 dideli failai su vieno simbolio skirtumu:
 ```
-big1diffsymbol1.txt- 3a455ea320b1941629884a5e235ad9201235ad9251cef3aef2d7a9aa656c4522
-big1diffsymbol2.txt- 3a455ea320b1941617529ccc91ad6c901235ad9251cef3aef2d7a9aa656c4522
+big1diffsymbol1.txt- 1ec103cb35d715d56d291cd66336867d1ec103cb2d1e74b369095c0e7766ccf6
+big1diffsymbol2.txt- 18e957177b725cd91f72a9a999bdae5818e95717b992a97ae916685e7b725cd9
 ```
 - 2 failai su vienu simboliu
 ```
-onesymbol1.txt - 24a9c728fcdcc7d1d102b78d0a3ac1b0ae44816536260efffcdcc7d119b1d3cf
-onesymbol2.txt - 3f0386d52c4834d2675b83398ec614cb08ebdb77e675b8339312e356153aa691
+onesymbol1.txt - 21224588ab6efe5ac144a9d6f6ec5df821224588d5dbd7cccaaf7f3827cf8698
+onesymbol2.txt - 12dbf15153a7de72ddb48afe7bafc3e912dbf151351ea7ad53a7de727336caba
 ```
 
 # Skirtingų string'ų ir panašių string'ų testų rezultatai
@@ -36,8 +36,8 @@ Collisions: 0
 - 100000 panašių string'ų po 10 simbolių:
 ```
 Collisions: 0
-Mažiausias skirtingumas: 15,0391
+Mažiausias skirtingumas: 16,4063
 Didžiausias skirtingumas: 42,5781
-Vidutinis skirtingumas: 32,3203
+Vidutinis skirtingumas: 32,5772
 ```
 
