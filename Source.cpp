@@ -15,7 +15,6 @@ std::string hashfunction(std::string word)
 		sum += (value % sum) * value;
 		sum += sum * sum;
 		sum += sum << 3;
-		sum += sum * value;
 		
 	}
 	sum = sum >> 2;
@@ -28,6 +27,7 @@ std::string hashfunction(std::string word)
 		{
 			tempresult = tempresult * (sum >> 2);
 			tempresult += tempresult >> 2;
+			tempresult += tempresult | sum;
 			ss.str("");
 			ss << std::hex << tempresult;
 			result += ss.str();
@@ -42,29 +42,32 @@ std::string hashfunction(std::string word)
 	return result;
 }
 
-void reading()
+void reading()	//std::string& word
 {
 	std::string filename;
 	std::cout << "Enter the full file name:" << std::endl;
 	std::cin >> filename;
 	std::ifstream file(filename);
-	//auto start = std::chrono::high_resolution_clock::now();
+	auto start = std::chrono::high_resolution_clock::now();
 	if (!file)
 	{
 		std::cout << "File was not found" << std::endl;
 		exit(0);
 	}
 	else {
-		
+		//while (std::getline(file, word))
+		//{
+		//	hashfunction(word);
+		//}
 		std::string word((std::istreambuf_iterator<char>(file)),
 			(std::istreambuf_iterator<char>()));
 
 		hashfunction(word);
 		
 	}
-	//auto end = std::chrono::high_resolution_clock::now();
-	//std::chrono::duration<double> diff = end - start;
-	//std::cout << "Function time: " << diff.count() << std::endl;
+	auto end = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> diff = end - start;
+	std::cout << "Function time: " << diff.count() << std::endl;
 
 }
 
