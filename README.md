@@ -9,7 +9,7 @@ Vyksta ciklas kuris nuskaito string'o simbolį ir paverčia į skaičių(value) 
 # Testavimų rezultatai
 
 - Konstitucijos kiekvienos eilutės hash'avimo laikas: 0,439703 sec
-- Visos konstitucijos hash'as: 535b8a51882aa833d90341ca7751e418c3c7342de194db19cc901593d7cd9319
+- Visos konstitucijos hash'as: 2c534fbe716dbdd871a490c2bcbcb2d63bb558e8cca59f6e31bf5d46baeed9dc
 
 - 2 skirtingi 2000 simbolių failai:
 ```
